@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <title>Tamagotchi Kawaii</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <h1 class="title">UTAGOTCHI</h1>
+
+    <div class="game-container">
+        <img id="petImage" src="img/happy.png" class="pet" />
+
+        <div class="stats">
+            <p>Hambre: <span id="hunger">50</span>%</p>
+            <p>Energía: <span id="energy">50</span>%</p>
+            <p>Limpieza: <span id="cleanliness">50</span>%</p>
+            <p>Diversión: <span id="fun">50</span>%</p>
+            <p>Salud: <span id="health">100</span>%</p>
+        </div>
+
+        <div class="actions">
+            <button>Alimentar 🍙</button>
+            <button>Jugar 🎮</button>
+            <button>Limpiar 🧼</button>
+            <button>Dormir 😴</button>
+            <button>Medicina 💊</button>
+        </div>
+    </div>
+
+    <!-- HUD adicional para ánimo y hora -->
+    <div id="tmg-extra-hud" style="margin-top:15px;font-size:18px;color:#333;"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

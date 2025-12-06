@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Barra de navegación */
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: #111;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #2997ff;
+        }
+
+        /* Sección principal con imagen de fondo */
+        .hero {
+            text-align: center;
+            padding: 120px 20px;
+            background: url("bannerjosear spotify.png") no-repeat center center/cover;
+            position: relative;
+            color: white;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+
+        .hero h1,
+        .hero p,
+        .buttons {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 0 10px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .btn-blue {
+            background-color: #0071e3;
+            color: white;
+        }
+
+        .btn-blue:hover {
+            background-color: #2997ff;
+        }
+
+        .btn-outline {
+            border: 2px solid #0071e3;
+            color: #0071e3;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: #0071e3;
+            color: white;
+        }
+
+        /* Nueva sección estilo Apple */
+        .highlight {
+            background-color: #f5f5f7;
+            color: #000;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .highlight h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .highlight p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            line-height: 1.6;
+        }
+
+        .highlight img {
+            max-width: 500px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #111;
+            color: #aaa;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Barra de navegación -->
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="/p.html">Proyectos</a>
+    </nav>
+
+    <!-- Sección principal -->
+    <section class="hero">
+        <h1>Desarrollo Web</h1>
+        <p>Kevin Raziel De Los Santos Jaramillo.</p>
+        <div class="buttons">
+            <a href="/p.html" class="btn btn-outline">Empezar</a>
+        </div>
+    </section>
+
+
+    <section class="highlight">
+        <h2>Funciones de la Materia</h2>
+        <p>
+            Diseñar, desarrollar e implementar sitios web funcionales y atractivos.
+            Aplicar principios de usabilidad, accesibilidad y diseño responsivo.
+            Usar tecnologías como HTML, CSS, JS y frameworks modernos.
+            Integrar bases de datos y servicios en línea.
+            Fomentar creatividad e innovación digital. Crear interfaces web dinámicas y adaptables.
+
+        </p>
+        <h2>Capacidades</h2>
+        <p>
+            Gestionar proyectos web de forma profesional.
+            Resolver problemas de programación y diseño.
+            Conocer herramientas de control de versiones y despliegue.
+            Desarrollar pensamiento lógico y creativo. Entrega puntual y funcional de proyectos web.
+
+
+        </p>
+        <h2>Criterios de Desempeño</h2>
+        <p>
+            Uso correcto de código limpio y documentado.
+            Aplicación de diseño visual profesional.
+            Integración de multimedia y elementos interactivos.
+            Trabajo colaborativo y manejo de versiones.
+        </p>
+        <img src="" alt="">
+    </section>
+
+    <footer>
+        © 2025. PWNGNG.
+    </footer>
+
+</body>
+
+</html>

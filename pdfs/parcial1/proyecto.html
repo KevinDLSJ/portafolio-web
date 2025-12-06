@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Etiquetas HTML</title>
+    <style>
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        .contenedor {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #005a9c;
+        }
+        #tabla-tags {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+            gap: 10px;
+            margin-bottom: 50px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .etiqueta-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1em;
+            color: white;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .etiqueta-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .cat-semantica { background-color: #6f42c1; }    
+        .cat-estructura { background-color: #007bff; }  
+        .cat-texto { background-color: #28a745; }        
+        .cat-listas { background-color: #17a2b8; }       
+        .cat-tablas { background-color: #6c757d; }       
+        .cat-formularios { background-color: #fd7e14; }  
+        .cat-media { background-color: #dc3545; }        
+
+
+        #descripciones {
+            margin-top: 40px;
+        }
+
+        .tag-descripcion {
+            background-color: #ffffff;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #005a9c;
+        }
+
+        .tag-descripcion h2 {
+            margin-top: 0;
+            font-size: 2em;
+            color: #005a9c;
+        }
+        
+        .tag-descripcion h2 code {
+            font-size: 0.9em;
+            color: #e83e8c;
+        }
+
+        .codigo-ejemplo {
+            background-color: #e9ecef;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            font-size: 14px;
+        }
+        
+       
+        #boton-volver-arriba {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            width: 50px;
+            height: 50px;
+            background-color: #005a9c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 24px;
+            line-height: 50px;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+            text-decoration: none;
+            z-index: 1000;
+        }
+
+        #boton-volver-arriba:hover {
+            background-color: #007bff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+
+        <h1>Etiquetas HTML</h1>
+
+        <div id="tabla-tags">
+            <a href="#detalle-semantica" class="etiqueta-link cat-semantica">&lt;header&gt;</a>
+            <a href="#detalle-semantica" class="etiqueta-link cat-semantica">&lt;nav&gt;</a>
+            <a href="#detalle-semantica" class="etiqueta-link cat-semantica">&lt;main&gt;</a>
+            <a href="#detalle-semantica" class="etiqueta-link cat-semantica">&lt;section&gt;</a>
+            <a href="#detalle-semantica" class="etiqueta-link cat-semantica">&lt;article&gt;</a>
+            <a href="#detalle-semantica" class="etiqueta-link cat-semantica">&lt;footer&gt;</a>
+            <a href="#detalle-div" class="etiqueta-link cat-estructura">&lt;div&gt;</a>
+            <a href="#detalle-span" class="etiqueta-link cat-estructura">&lt;span&gt;</a>
+            <a href="#detalle-h1" class="etiqueta-link cat-texto">&lt;h1&gt;-&lt;h6&gt;</a>
+            <a href="#detalle-p" class="etiqueta-link cat-texto">&lt;p&gt;</a>
+            <a href="#detalle-a" class="etiqueta-link cat-texto">&lt;a&gt;</a>
+            <a href="#detalle-strong-em" class="etiqueta-link cat-texto">&lt;strong&gt;</a>
+            <a href="#detalle-strong-em" class="etiqueta-link cat-texto">&lt;em&gt;</a>
+            <a href="#detalle-br" class="etiqueta-link cat-texto">&lt;br&gt;</a>
+            <a href="#detalle-listas" class="etiqueta-link cat-listas">&lt;ul&gt;</a>
+            <a href="#detalle-listas" class="etiqueta-link cat-listas">&lt;ol&gt;</a>
+            <a href="#detalle-listas" class="etiqueta-link cat-listas">&lt;li&gt;</a>
+            <a href="#detalle-table" class="etiqueta-link cat-tablas">&lt;table&gt;</a>
+            <a href="#detalle-tabla-semantica" class="etiqueta-link cat-tablas">&lt;thead&gt;</a>
+            <a href="#detalle-tabla-semantica" class="etiqueta-link cat-tablas">&lt;tr&gt; &lt;th&gt; &lt;td&gt;</a>
+            <a href="#detalle-form" class="etiqueta-link cat-formularios">&lt;form&gt;</a>
+            <a href="#detalle-label" class="etiqueta-link cat-formularios">&lt;label&gt;</a>
+            <a href="#detalle-input" class="etiqueta-link cat-formularios">&lt;input&gt;</a>
+            <a href="#detalle-textarea" class="etiqueta-link cat-formularios">&lt;textarea&gt;</a>
+            <a href="#detalle-select" class="etiqueta-link cat-formularios">&lt;select&gt;</a>
+            <a href="#detalle-button" class="etiqueta-link cat-formularios">&lt;button&gt;</a>
+            <a href="#detalle-img" class="etiqueta-link cat-media">&lt;img&gt;</a>
+            <a href="#detalle-audio-video" class="etiqueta-link cat-media">&lt;audio&gt;</a>
+            <a href="#detalle-audio-video" class="etiqueta-link cat-media">&lt;video&gt;</a>
+            
+            <a href="#detalle-aside" class="etiqueta-link cat-semantica">&lt;aside&gt;</a>
+            <a href="#detalle-figure" class="etiqueta-link cat-semantica">&lt;figure&gt;</a>
+            <a href="#detalle-details" class="etiqueta-link cat-semantica">&lt;details&gt;</a>
+            <a href="#detalle-address" class="etiqueta-link cat-semantica">&lt;address&gt;</a>
+            <a href="#detalle-hr" class="etiqueta-link cat-estructura">&lt;hr&gt;</a>
+            <a href="#detalle-pre" class="etiqueta-link cat-estructura">&lt;pre&gt;</a>
+            <a href="#detalle-blockquote" class="etiqueta-link cat-texto">&lt;blockquote&gt;</a>
+            <a href="#detalle-formatting" class="etiqueta-link cat-texto">&lt;b&gt; &lt;i&gt; &lt;u&gt;</a>
+            <a href="#detalle-formatting" class="etiqueta-link cat-texto">&lt;small&gt;</a>
+            <a href="#detalle-edit" class="etiqueta-link cat-texto">&lt;ins&gt; &lt;del&gt;</a>
+            <a href="#detalle-subsup" class="etiqueta-link cat-texto">&lt;sub&gt; &lt;sup&gt;</a>
+            <a href="#detalle-code" class="etiqueta-link cat-texto">&lt;code&gt;</a>
+            <a href="#detalle-kbd" class="etiqueta-link cat-texto">&lt;kbd&gt;</a>
+            <a href="#detalle-q" class="etiqueta-link cat-texto">&lt;q&gt;</a>
+            <a href="#detalle-abbr" class="etiqueta-link cat-texto">&lt;abbr&gt;</a>
+            <a href="#detalle-time" class="etiqueta-link cat-texto">&lt;time&gt;</a>
+            <a href="#detalle-mark" class="etiqueta-link cat-texto">&lt;mark&gt;</a>
+            <a href="#detalle-dl" class="etiqueta-link cat-listas">&lt;dl&gt; &lt;dt&gt; &lt;dd&gt;</a>
+            <a href="#detalle-tabla-extra" class="etiqueta-link cat-tablas">&lt;caption&gt;</a>
+            <a href="#detalle-tabla-extra" class="etiqueta-link cat-tablas">&lt;tfoot&gt;</a>
+            <a href="#detalle-fieldset" class="etiqueta-link cat-formularios">&lt;fieldset&gt;</a>
+            <a href="#detalle-datalist" class="etiqueta-link cat-formularios">&lt;datalist&gt;</a>
+            <a href="#detalle-optgroup" class="etiqueta-link cat-formularios">&lt;optgroup&gt;</a>
+            <a href="#detalle-output" class="etiqueta-link cat-formularios">&lt;output&gt;</a>
+            <a href="#detalle-progress" class="etiqueta-link cat-formularios">&lt;progress&gt;</a>
+            <a href="#detalle-meter" class="etiqueta-link cat-formularios">&lt;meter&gt;</a>
+            <a href="#detalle-iframe" class="etiqueta-link cat-media">&lt;iframe&gt;</a>
+            <a href="#detalle-embed" class="etiqueta-link cat-media">&lt;embed&gt;</a>
+            <a href="#detalle-object" class="etiqueta-link cat-media">&lt;object&gt;</a>
+            <a href="#detalle-picture" class="etiqueta-link cat-media">&lt;picture&gt;</a>
+            <a href="#detalle-canvas" class="etiqueta-link cat-media">&lt;canvas&gt;</a>
+            <a href="#detalle-script" class="etiqueta-link cat-estructura">&lt;script&gt;</a>
+            <a href="#detalle-head-tags" class="etiqueta-link cat-estructura">&lt;head&gt; tags</a>
+        </div>
+
+        <hr>
+
+        <section id="descripciones">
+
+            <article id="detalle-semantica" class="tag-descripcion">
+                <h2>Etiquetas Semánticas</h2>
+                <p><strong>Función:</strong> Estas etiquetas le dan un significado estructural al contenido. Ayudan a los navegadores, motores de búsqueda y lectores de pantalla a entender mejor la organización de tu página. Organizan el contenido en bloques lógicos.</p>
+                <ul>
+                    <li><code>&lt;header&gt;</code>: Contiene la cabecera, usualmente con el logo y el menú principal.</li>
+                    <li><code>&lt;nav&gt;</code>: Define un bloque de enlaces de navegación.</li>
+                    <li><code>&lt;main&gt;</code>: Representa el contenido principal y único de la página.</li>
+                    <li><code>&lt;section&gt;</code>: Agrupa contenido relacionado temáticamente.</li>
+                    <li><code>&lt;article&gt;</code>: Contiene un bloque de contenido independiente y autocontenido (como un post de blog).</li>
+                    <li><code>&lt;footer&gt;</code>: Representa el pie de página, con información de copyright, enlaces, etc.</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;body&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Logo de Mi Sitio&lt;/h1&gt;
+    &lt;nav&gt; ... &lt;/nav&gt;
+  &lt;/header&gt;
+
+  &lt;main&gt;
+    &lt;article&gt; ... &lt;/article&gt;
+  &lt;/main&gt;
+
+  &lt;footer&gt;
+    &lt;p&gt;&copy; 2025 Mi Sitio Web.&lt;/p&gt;
+  &lt;/footer&gt;
+&lt;/body&gt;</code></pre>
+            </article>
+
+            <article id="detalle-aside" class="tag-descripcion">
+                <h2><code>&lt;aside&gt;</code></h2>
+                <p><strong>Función:</strong> Define contenido relacionado al contenido principal, pero que podría considerarse separado (como una barra lateral o un bloque de anuncios).</p>
+                <pre class="codigo-ejemplo"><code>&lt;main&gt;
+  &lt;h1&gt;Artículo Principal&lt;/h1&gt;
+  &lt;p&gt;Contenido del artículo...&lt;/p&gt;
+&lt;/main&gt;
+&lt;aside&gt;
+  &lt;h3&gt;Artículos Relacionados&lt;/h3&gt;
+  &lt;ul&gt;...&lt;/ul&gt;
+&lt;/aside&gt;</code></pre>
+            </article>
+
+            <article id="detalle-figure" class="tag-descripcion">
+                <h2><code>&lt;figure&gt;</code> y <code>&lt;figcaption&gt;</code></h2>
+                <p><strong>Función:</strong> <code>&lt;figure&gt;</code> se usa para agrupar contenido multimedia como imágenes, diagramas o fragmentos de código. <code>&lt;figcaption&gt;</code> proporciona una leyenda o título para el <code>&lt;figure&gt;</code>.</p>
+                <pre class="codigo-ejemplo"><code>&lt;figure&gt;
+  &lt;img src="paisaje.jpg" alt="Un paisaje montañoso"&gt;
+  &lt;figcaption&gt;Fig.1 - Vista de las montañas al amanecer.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+            </article>
+
+            <article id="detalle-details" class="tag-descripcion">
+                <h2><code>&lt;details&gt;</code> y <code>&lt;summary&gt;</code></h2>
+                <p><strong>Función:</strong> Crean un widget de revelación interactivo. El contenido dentro de <code>&lt;details&gt;</code> está oculto y se muestra al hacer clic en el texto de <code>&lt;summary&gt;</code>.</p>
+                <pre class="codigo-ejemplo"><code>&lt;details&gt;
+  &lt;summary&gt;Ver más información&lt;/summary&gt;
+  &lt;p&gt;Aquí está el contenido adicional que estaba oculto.&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+            </article>
+
+            <article id="detalle-address" class="tag-descripcion">
+                <h2><code>&lt;address&gt;</code></h2>
+                <p><strong>Función:</strong> Proporciona información de contacto para el autor o propietario de un documento o artículo. Puede incluir nombres, direcciones de correo, URL, direcciones físicas, etc.</p>
+                <pre class="codigo-ejemplo"><code>&lt;address&gt;
+  Escrito por &lt;a href="mailto:autor@ejemplo.com"&gt;Juan Pérez&lt;/a&gt;.&lt;br&gt;
+  Visítanos en:&lt;br&gt;
+  MiSitio.com&lt;br&gt;
+  Calle Falsa 123, Ciudad&lt;br&gt;
+&lt;/address&gt;</code></pre>
+            </article>
+
+            <article id="detalle-div" class="tag-descripcion">
+                <h2><code>&lt;div&gt;</code></h2>
+                <p><strong>Función:</strong> Es un contenedor genérico en bloque. No tiene significado semántico, pero es fundamental para agrupar elementos y aplicarles estilos con CSS o manipularlos con JavaScript.</p>
+                <pre class="codigo-ejemplo"><code>&lt;div class="noticia"&gt;
+  &lt;h2&gt;Título de la noticia&lt;/h2&gt;
+  &lt;p&gt;Contenido de la noticia.&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+            </article>
+
+            <article id="detalle-span" class="tag-descripcion">
+                <h2><code>&lt;span&gt;</code></h2>
+                <p><strong>Función:</strong> Es un contenedor genérico en línea. Se usa para agrupar una parte de un texto o documento con el fin de aplicarle un estilo específico sin romper el flujo del contenido.</p>
+                <pre class="codigo-ejemplo"><code>&lt;p&gt;El precio final es &lt;span style="color: green; font-weight: bold;"&gt;$19.99&lt;/span&gt;.&lt;/p&gt;</code></pre>
+            </article>
+
+            <article id="detalle-hr" class="tag-descripcion">
+                <h2><code>&lt;hr&gt;</code></h2>
+                <p><strong>Función:</strong> Representa una ruptura temática entre párrafos o secciones. Se visualiza como una línea horizontal.</p>
+                <pre class="codigo-ejemplo"><code>&lt;p&gt;Este es el primer tema.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Este es un tema completamente diferente.&lt;/p&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-h1" class="tag-descripcion">
+                <h2><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></h2>
+                <p><strong>Función:</strong> Define encabezados o títulos. <code>&lt;h1&gt;</code> es el más importante y <code>&lt;h6&gt;</code> el menos. Son cruciales para la estructura y el SEO.</p>
+                <pre class="codigo-ejemplo"><code>&lt;h1&gt;Título Principal de la Página&lt;/h1&gt;
+&lt;h2&gt;Un Subtítulo Importante&lt;/h2&gt;</code></pre>
+            </article>
+
+            <article id="detalle-p" class="tag-descripcion">
+                <h2><code>&lt;p&gt;</code></h2>
+                <p><strong>Función:</strong> Define un párrafo. Es la etiqueta básica para agrupar texto.</p>
+                <pre class="codigo-ejemplo"><code>&lt;p&gt;Este es el texto de un párrafo.&lt;/p&gt;</code></pre>
+            </article>
+
+            <article id="detalle-pre" class="tag-descripcion">
+                <h2><code>&lt;pre&gt;</code></h2>
+                <p><strong>Función:</strong> Define texto preformateado. El texto dentro de esta etiqueta se muestra en una fuente de ancho fijo (como la de código) y respeta tanto los espacios como los saltos de línea.</p>
+                <pre class="codigo-ejemplo"><code>&lt;pre&gt;
+  Texto con    múltiples
+  espacios y
+  saltos de línea.
+&lt;/pre&gt;</code></pre>
+            </article>
+
+            <article id="detalle-blockquote" class="tag-descripcion">
+                <h2><code>&lt;blockquote&gt;</code></h2>
+                <p><strong>Función:</strong> Se utiliza para marcar una sección que es una cita extensa de otra fuente. Los navegadores suelen renderizarlo con un margen (indentación).</p>
+                <pre class="codigo-ejemplo"><code>&lt;blockquote cite="https://www.fuente.com"&gt;
+  &lt;p&gt;Esta es una cita larga de un libro o un artículo.&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+            </article>
+
+            <article id="detalle-a" class="tag-descripcion">
+                <h2><code>&lt;a&gt;</code></h2>
+                <p><strong>Función:</strong> Crea un hipervínculo. El atributo <code>href</code> indica el destino del enlace.</p>
+                <pre class="codigo-ejemplo"><code>&lt;a href="https://www.google.com"&gt;Ir a Google&lt;/a&gt;</code></pre>
+            </article>
+
+            <article id="detalle-strong-em" class="tag-descripcion">
+                <h2><code>&lt;strong&gt;</code> y <code>&lt;em&gt;</code></h2>
+                <p><strong>Función:</strong> Se usan para dar énfasis al texto.</p>
+                <ul>
+                    <li><code>&lt;strong&gt;</code>: Indica que el texto tiene una gran importancia o seriedad (visualmente en negrita).</li>
+                    <li><code>&lt;em&gt;</code> (emphasis): Pone énfasis en una palabra o frase (visualmente en cursiva).</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;p&gt;&lt;strong&gt;Advertencia:&lt;/strong&gt; No tocar el cableado.&lt;/p&gt;
+&lt;p&gt;Debes hacerlo &lt;em&gt;ahora&lt;/em&gt; mismo.&lt;/p&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-formatting" class="tag-descripcion">
+                <h2><code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code> y <code>&lt;small&gt;</code></h2>
+                <p><strong>Función:</strong> Estas etiquetas aplican formato estilístico sin un significado semántico fuerte.</p>
+                <ul>
+                    <li><code>&lt;b&gt;</code>: Pone el texto en <b>negrita</b> (Bold).</li>
+                    <li><code>&lt;i&gt;</code>: Pone el texto en <i>cursiva</i> (Italic).</li>
+                    <li><code>&lt;u&gt;</code>: <u>Subraya</u> el texto (Underline).</li>
+                    <li><code>&lt;small&gt;</code>: Muestra el texto en un tamaño <small>más pequeño</small>, como en el "texto legal".</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;p&gt;Este texto es &lt;b&gt;importante&lt;/b&gt; pero no tanto como con &lt;i&gt;strong&lt;/i&gt;.&lt;/p&gt;</code></pre>
+            </article>
+
+            <article id="detalle-edit" class="tag-descripcion">
+                <h2><code>&lt;ins&gt;</code> y <code>&lt;del&gt;</code></h2>
+                <p><strong>Función:</strong> Marcan ediciones en el documento.</p>
+                <ul>
+                    <li><code>&lt;ins&gt;</code>: Marca texto que ha sido <ins>insertado</ins>.</li>
+                    <li><code>&lt;del&gt;</code>: Marca texto que ha sido <del>eliminado</del>.</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;p&gt;El precio es &lt;del&gt;$100&lt;/del&gt; &lt;ins&gt;$75&lt;/ins&gt;.&lt;/p&gt;</code></pre>
+            </article>
+
+            <article id="detalle-subsup" class="tag-descripcion">
+                <h2><code>&lt;sub&gt;</code> y <code>&lt;sup&gt;</code></h2>
+                <p><strong>Función:</strong> Se usan para texto de subíndice y superíndice.</p>
+                <ul>
+                    <li><code>&lt;sub&gt;</code>: Subíndice, como en H<sub>2</sub>O.</li>
+                    <li><code>&lt;sup&gt;</code>: Superíndice, como en E=mc<sup>2</sup>.</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;p&gt;La fórmula del agua es H&lt;sub&gt;2&lt;/sub&gt;O.&lt;/p&gt;
+&lt;p&gt;El área es de 100 m&lt;sup&gt;2&lt;/sup&gt;.&lt;/p&gt;</code></pre>
+            </article>
+
+            <article id="detalle-code" class="tag-descripcion">
+                <h2><code>&lt;code&gt;</code>, <code>&lt;kbd&gt;</code>, <code>&lt;samp&gt;</code>, <code>&lt;var&gt;</code></h2>
+                <p><strong>Función:</strong> Etiquetas para representar diferentes tipos de texto técnico o de computadora.</p>
+                 <ul>
+                    <li><code>&lt;code&gt;</code>: Muestra un fragmento de código. Ejemplo: <code>&lt;div&gt;</code>.</li>
+                    <li><code>&lt;kbd&gt;</code>: Representa la entrada del usuario (teclado). Ejemplo: <kbd>Ctrl</kbd> + <kbd>S</kbd>.</li>
+                    <li><code>&lt;samp&gt;</code>: Indica una salida de muestra de un programa.</li>
+                    <li><code>&lt;var&gt;</code>: Representa una variable en una expresión matemática o de programación.</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;p&gt;Para guardar, presiona &lt;kbd&gt;Ctrl+S&lt;/kbd&gt;.&lt;/p&gt;
+&lt;p&gt;La variable &lt;var&gt;x&lt;/var&gt; debe ser mayor que cero.&lt;/p&gt;</code></pre>
+            </article>
+
+            <article id="detalle-q" class="tag-descripcion">
+                <h2><code>&lt;q&gt;</code> y <code>&lt;cite&gt;</code></h2>
+                <p><strong>Función:</strong> Se usan para citas.</p>
+                <ul>
+                    <li><code>&lt;q&gt;</code>: Para una cita corta en línea. Los navegadores suelen añadir comillas automáticamente.</li>
+                    <li><code>&lt;cite&gt;</code>: Para citar el título de una obra (libro, película, etc.).</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;p&gt;Como dijo Einstein, &lt;q&gt;La imaginación es más importante que el conocimiento&lt;/q&gt;.&lt;/p&gt;
+&lt;p&gt;Mi libro favorito es &lt;cite&gt;Cien Años de Soledad&lt;/cite&gt;.&lt;/p&gt;</code></pre>
+            </article>
+
+            <article id="detalle-abbr" class="tag-descripcion">
+                <h2><code>&lt;abbr&gt;</code></h2>
+                <p><strong>Función:</strong> Define una abreviatura o un acrónimo. El atributo <code>title</code> se usa para mostrar el término completo.</p>
+                <pre class="codigo-ejemplo"><code>La &lt;abbr title="Organización Mundial de la Salud"&gt;OMS&lt;/abbr&gt; emitió un comunicado.</code></pre>
+            </article>
+
+            <article id="detalle-time" class="tag-descripcion">
+                <h2><code>&lt;time&gt;</code></h2>
+                <p><strong>Función:</strong> Define una fecha u hora específica. El atributo <code>datetime</code> proporciona un formato legible por máquinas.</p>
+                <pre class="codigo-ejemplo"><code>La reunión será el &lt;time datetime="2025-10-31T10:00"&gt;31 de Octubre a las 10:00 AM&lt;/time&gt;.</code></pre>
+            </article>
+
+            <article id="detalle-mark" class="tag-descripcion">
+                <h2><code>&lt;mark&gt;</code></h2>
+                <p><strong>Función:</strong> Resalta una porción de texto que es relevante en un contexto particular, como resaltar términos de búsqueda en un resultado.</p>
+                <pre class="codigo-ejemplo"><code>Resultados de la búsqueda: &lt;mark&gt;HTML&lt;/mark&gt; es un lenguaje de marcado.</code></pre>
+            </article>
+
+            <article id="detalle-br" class="tag-descripcion">
+                <h2><code>&lt;br&gt;</code></h2>
+                <p><strong>Función:</strong> Inserta un salto de línea. Es útil para separar líneas cortas de texto, como en direcciones o poemas, sin crear un nuevo párrafo.</p>
+                <pre class="codigo-ejemplo"><code>Google LLC&lt;br&gt;
+1600 Amphitheatre Parkway&lt;br&gt;
+Mountain View, CA 94043</code></pre>
+            </article>
+
+            <article id="detalle-listas" class="tag-descripcion">
+                <h2><code>&lt;ul&gt;</code>, <code>&lt;ol&gt;</code>, <code>&lt;li&gt;</code></h2>
+                <p><strong>Función:</strong> Crean listas.</p>
+                <ul>
+                    <li><code>&lt;ul&gt;</code>: Lista no ordenada (con viñetas).</li>
+                    <li><code>&lt;ol&gt;</code>: Lista ordenada (con números o letras).</li>
+                    <li><code>&lt;li&gt;</code>: Elemento de la lista (se usa dentro de <code>&lt;ul&gt;</code> o <code>&lt;ol&gt;</code>).</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;h3&gt;Lista de compras:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Leche&lt;/li&gt;
+  &lt;li&gt;Pan&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Instrucciones:&lt;/h3&gt;
+&lt;ol&gt;
+  &lt;li&gt;Abrir la caja.&lt;/li&gt;
+  &lt;li&gt;Montar las piezas.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-dl" class="tag-descripcion">
+                <h2><code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code></h2>
+                <p><strong>Función:</strong> Crean una lista de descripción, que consiste en pares de términos y sus descripciones (como un glosario).</p>
+                <ul>
+                    <li><code>&lt;dl&gt;</code>: El contenedor de la lista (Description List).</li>
+                    <li><code>&lt;dt&gt;</code>: El término a definir (Description Term).</li>
+                    <li><code>&lt;dd&gt;</code>: La descripción del término (Description Details).</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Lenguaje de Marcado de Hipertexto.&lt;/dd&gt;
+  &lt;dt&gt;CSS&lt;/dt&gt;
+  &lt;dd&gt;Hojas de Estilo en Cascada.&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+            </article>
+
+            <article id="detalle-table" class="tag-descripcion">
+                <h2><code>&lt;table&gt;</code></h2>
+                <p><strong>Función:</strong> Define una tabla para mostrar datos tabulares.</p>
+                <pre class="codigo-ejemplo"><code>&lt;table&gt;
+  ... filas y celdas aquí ...
+&lt;/table&gt;</code></pre>
+            </article>
+
+            <article id="detalle-tabla-semantica" class="tag-descripcion">
+                <h2><code>&lt;thead&gt;</code>, <code>&lt;tbody&gt;</code>, <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code>, <code>&lt;td&gt;</code></h2>
+                <p><strong>Función:</strong> Son las partes que componen una tabla bien estructurada.</p>
+                <ul>
+                    <li><code>&lt;thead&gt;</code>: Agrupa el contenido de la cabecera de la tabla.</li>
+                    <li><code>&lt;tbody&gt;</code>: Agrupa el contenido del cuerpo principal de la tabla.</li>
+                    <li><code>&lt;tr&gt;</code>: Define una fila (table row).</li>
+                    <li><code>&lt;th&gt;</code>: Define una celda de encabezado (table header).</li>
+                    <li><code>&lt;td&gt;</code>: Define una celda de datos (table data).</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nombre&lt;/th&gt;
+      &lt;th&gt;Edad&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-tabla-extra" class="tag-descripcion">
+                <h2><code>&lt;caption&gt;</code> y <code>&lt;tfoot&gt;</code></h2>
+                <p><strong>Función:</strong> Elementos adicionales para tablas.</p>
+                <ul>
+                    <li><code>&lt;caption&gt;</code>: Proporciona un título o leyenda para la tabla. Debe ser el primer elemento hijo de <code>&lt;table&gt;</code>.</li>
+                    <li><code>&lt;tfoot&gt;</code>: Agrupa el contenido del pie de la tabla, como filas de resumen o totales.</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;table&gt;
+  &lt;caption&gt;Gastos Mensuales&lt;/caption&gt;
+  &lt;thead&gt;...&lt;/thead&gt;
+  &lt;tbody&gt;...&lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Total&lt;/td&gt;
+      &lt;td&gt;$500&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-form" class="tag-descripcion">
+                <h2><code>&lt;form&gt;</code></h2>
+                <p><strong>Función:</strong> Contenedor para controles de formulario, como campos de texto, botones, etc.</p>
+                <pre class="codigo-ejemplo"><code>&lt;form action="/enviar-datos" method="post"&gt;
+  ... campos del formulario aquí ...
+&lt;/form&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-fieldset" class="tag-descripcion">
+                <h2><code>&lt;fieldset&gt;</code> y <code>&lt;legend&gt;</code></h2>
+                <p><strong>Función:</strong> <code>&lt;fieldset&gt;</code> agrupa controles relacionados dentro de un formulario, dibujando un recuadro a su alrededor. <code>&lt;legend&gt;</code> proporciona un título para ese grupo.</p>
+                <pre class="codigo-ejemplo"><code>&lt;form&gt;
+  &lt;fieldset&gt;
+    &lt;legend&gt;Información Personal&lt;/legend&gt;
+    &lt;label for="nombre"&gt;Nombre:&lt;/label&gt;
+    &lt;input type="text" id="nombre"&gt;&lt;br&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email"&gt;
+  &lt;/fieldset&gt;
+&lt;/form&gt;</code></pre>
+            </article>
+
+            <article id="detalle-label" class="tag-descripcion">
+                <h2><code>&lt;label&gt;</code></h2>
+                <p><strong>Función:</strong> Representa una etiqueta descriptiva para un control de formulario. Mejora la accesibilidad, ya que al hacer clic en el label, el foco se pone en el campo asociado.</p>
+                <pre class="codigo-ejemplo"><code>&lt;label for="nombre"&gt;Tu nombre:&lt;/label&gt;
+&lt;input type="text" id="nombre"&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-input" class="tag-descripcion">
+                <h2><code>&lt;input&gt;</code></h2>
+                <p><strong>Función:</strong> Es el campo más versátil. El atributo <code>type</code> define su comportamiento: <code>text</code>, <code>email</code>, <code>password</code>, <code>checkbox</code>, <code>radio</code>, <code>submit</code>, etc.</p>
+                <pre class="codigo-ejemplo"><code>&lt;input type="email" placeholder="Escribe tu email"&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-textarea" class="tag-descripcion">
+                <h2><code>&lt;textarea&gt;</code></h2>
+                <p><strong>Función:</strong> Define un campo de entrada de texto de múltiples líneas, ideal para comentarios o mensajes largos.</p>
+                <pre class="codigo-ejemplo"><code>&lt;label for="comentario"&gt;Comentario:&lt;/label&gt;
+&lt;textarea id="comentario" rows="4" cols="50"&gt;&lt;/textarea&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-select" class="tag-descripcion">
+                <h2><code>&lt;select&gt;</code> y <code>&lt;option&gt;</code></h2>
+                <p><strong>Función:</strong> Crean un menú desplegable.</p>
+                <ul>
+                    <li><code>&lt;select&gt;</code>: Es el contenedor del menú.</li>
+                    <li><code>&lt;option&gt;</code>: Cada una de las opciones dentro del menú.</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;label for="pais"&gt;Elige un país:&lt;/label&gt;
+&lt;select id="pais"&gt;
+  &lt;option value="mx"&gt;México&lt;/option&gt;
+  &lt;option value="es"&gt;España&lt;/option&gt;
+  &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-optgroup" class="tag-descripcion">
+                <h2><code>&lt;optgroup&gt;</code></h2>
+                <p><strong>Función:</strong> Se usa dentro de un <code>&lt;select&gt;</code> para agrupar opciones relacionadas. El atributo <code>label</code> define el título del grupo.</p>
+                <pre class="codigo-ejemplo"><code>&lt;select&gt;
+  &lt;optgroup label="Europa"&gt;
+    &lt;option value="es"&gt;España&lt;/option&gt;
+    &lt;option value="fr"&gt;Francia&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="América"&gt;
+    &lt;option value="mx"&gt;México&lt;/option&gt;
+    &lt;option value="ar"&gt;Argentina&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+            </article>
+
+            <article id="detalle-datalist" class="tag-descripcion">
+                <h2><code>&lt;datalist&gt;</code></h2>
+                <p><strong>Función:</strong> Contiene un conjunto de elementos <code>&lt;option&gt;</code> que representan sugerencias para un campo <code>&lt;input&gt;</code>. Proporciona una funcionalidad de autocompletado.</p>
+                <pre class="codigo-ejemplo"><code>&lt;label for="navegador"&gt;Elige tu navegador:&lt;/label&gt;
+&lt;input list="navegadores" id="navegador" name="navegador"&gt;
+&lt;datalist id="navegadores"&gt;
+  &lt;option value="Chrome"&gt;
+  &lt;option value="Firefox"&gt;
+  &lt;option value="Safari"&gt;
+&lt;/datalist&gt;</code></pre>
+            </article>
+
+            <article id="detalle-button" class="tag-descripcion">
+                <h2><code>&lt;button&gt;</code></h2>
+                <p><strong>Función:</strong> Define un botón clicable. Puede contener texto e incluso otras etiquetas como imágenes, a diferencia de <code>&lt;input type="submit"&gt;</code>.</p>
+                <pre class="codigo-ejemplo"><code>&lt;button type="submit"&gt;Enviar Formulario&lt;/button&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-output" class="tag-descripcion">
+                <h2><code>&lt;output&gt;</code></h2>
+                <p><strong>Función:</strong> Representa el resultado de un cálculo o una acción del usuario. Es útil en formularios para mostrar resultados dinámicamente.</p>
+                <pre class="codigo-ejemplo"><code>&lt;form oninput="resultado.value=parseInt(a.value)+parseInt(b.value)"&gt;
+  &lt;input type="range" id="a" value="50"&gt; +
+  &lt;input type="number" id="b" value="50"&gt; =
+  &lt;output name="resultado" for="a b"&gt;100&lt;/output&gt;
+&lt;/form&gt;</code></pre>
+            </article>
+
+            <article id="detalle-progress" class="tag-descripcion">
+                <h2><code>&lt;progress&gt;</code></h2>
+                <p><strong>Función:</strong> Muestra el progreso de una tarea. Se representa como una barra de progreso.</p>
+                <pre class="codigo-ejemplo"><code>&lt;label for="file"&gt;Progreso de descarga:&lt;/label&gt;
+&lt;progress id="file" value="32" max="100"&gt; 32% &lt;/progress&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-meter" class="tag-descripcion">
+                <h2><code>&lt;meter&gt;</code></h2>
+                <p><strong>Función:</strong> Representa una medida escalar dentro de un rango conocido (un medidor). Es útil para mostrar uso de disco, relevancia de un resultado, etc.</p>
+                <pre class="codigo-ejemplo"><code>&lt;label for="disco"&gt;Uso de disco:&lt;/label&gt;
+&lt;meter id="disco" value="0.6"&gt;60%&lt;/meter&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-img" class="tag-descripcion">
+                <h2><code>&lt;img&gt;</code></h2>
+                <p><strong>Función:</strong> Inserta una imagen. Requiere <code>src</code> (ruta de la imagen) y <code>alt</code> (texto alternativo para accesibilidad).</p>
+                <pre class="codigo-ejemplo"><code>&lt;img src="logo.png" alt="Logo de la empresa"&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-picture" class="tag-descripcion">
+                <h2><code>&lt;picture&gt;</code> y <code>&lt;source&gt;</code></h2>
+                <p><strong>Función:</strong> Permiten ofrecer diferentes versiones de una imagen para distintos tamaños de pantalla (responsive) o formatos. El navegador elegirá la <code>&lt;source&gt;</code> más adecuada.</p>
+                <pre class="codigo-ejemplo"><code>&lt;picture&gt;
+  &lt;source media="(min-width: 800px)" srcset="imagen-grande.jpg"&gt;
+  &lt;source media="(min-width: 400px)" srcset="imagen-mediana.jpg"&gt;
+  &lt;img src="imagen-pequena.jpg" alt="Descripción"&gt;
+&lt;/picture&gt;</code></pre>
+            </article>
+
+            <article id="detalle-audio-video" class="tag-descripcion">
+                <h2><code>&lt;audio&gt;</code> y <code>&lt;video&gt;</code></h2>
+                <p><strong>Función:</strong> Incrustan contenido multimedia. El atributo <code>controls</code> muestra los controles de reproducción estándar del navegador (play, pausa, volumen).</p>
+                <pre class="codigo-ejemplo"><code>&lt;!-- Ejemplo de Audio --&gt;
+&lt;audio controls src="mi_cancion.mp3"&gt;
+  Tu navegador no soporta el elemento de audio.
+&lt;/audio&gt;
+
+&lt;!-- Ejemplo de Video --&gt;
+&lt;video controls width="320" src="mi_video.mp4"&gt;
+  Tu navegador no soporta el elemento de video.
+&lt;/video&gt;</code></pre>
+            </article>
+
+            <article id="detalle-iframe" class="tag-descripcion">
+                <h2><code>&lt;iframe&gt;</code></h2>
+                <p><strong>Función:</strong> Inserta un documento HTML dentro de otro (un marco en línea). Se usa comúnmente para incrustar mapas, videos de YouTube o contenido de terceros.</p>
+                <pre class="codigo-ejemplo"><code>&lt;iframe src="https://www.google.com/maps/embed?..." width="600" height="450"&gt;&lt;/iframe&gt;</code></pre>
+            </article>
+
+            <article id="detalle-embed" class="tag-descripcion">
+                <h2><code>&lt;embed&gt;</code></h2>
+                <p><strong>Función:</strong> Proporciona un punto de integración para una aplicación externa o contenido interactivo (un "plug-in"), como un archivo Flash (ahora obsoleto) o un visor de PDF.</p>
+                <pre class="codigo-ejemplo"><code>&lt;embed type="application/pdf" src="documento.pdf" width="600" height="500"&gt;</code></pre>
+            </article>
+
+            <article id="detalle-object" class="tag-descripcion">
+                <h2><code>&lt;object&gt;</code></h2>
+                <p><strong>Función:</strong> Representa un recurso externo, que puede ser una imagen, un subdocumento HTML, o un recurso que necesita un plugin. Es más versátil pero más complejo que <code>&lt;embed&gt;</code>.</p>
+                <pre class="codigo-ejemplo"><code>&lt;object data="recurso.swf" type="application/x-shockwave-flash"&gt;
+  &lt;p&gt;Contenido alternativo si el plugin no carga.&lt;/p&gt;
+&lt;/object&gt;</code></pre>
+            </article>
+
+            <article id="detalle-canvas" class="tag-descripcion">
+                <h2><code>&lt;canvas&gt;</code></h2>
+                <p><strong>Función:</strong> Se usa para dibujar gráficos, animaciones o visualizaciones sobre la marcha, generalmente a través de JavaScript.</p>
+                <pre class="codigo-ejemplo"><code>&lt;canvas id="miLienzo" width="200" height="100" style="border:1px solid #000;"&gt;
+  Tu navegador no soporta canvas.
+&lt;/canvas&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-script" class="tag-descripcion">
+                <h2><code>&lt;script&gt;</code> y <code>&lt;noscript&gt;</code></h2>
+                <p><strong>Función:</strong></p>
+                <ul>
+                    <li><code>&lt;script&gt;</code>: Se usa para incrustar o hacer referencia a código ejecutable, casi siempre JavaScript.</li>
+                    <li><code>&lt;noscript&gt;</code>: Define un contenido alternativo que se mostrará si el navegador no soporta scripts o si el usuario los ha desactivado.</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;script&gt;
+  alert('¡Hola, mundo!');
+&lt;/script&gt;
+&lt;noscript&gt;
+  &lt;p&gt;Esta página requiere JavaScript para funcionar correctamente.&lt;/p&gt;
+&lt;/noscript&gt;</code></pre>
+            </article>
+            
+            <article id="detalle-head-tags" class="tag-descripcion">
+                <h2>Etiquetas de <code>&lt;head&gt;</code></h2>
+                <p><strong>Función:</strong> La sección <code>&lt;head&gt;</code> contiene metadatos sobre el documento que no se muestran en la página.</p>
+                <ul>
+                    <li><code>&lt;title&gt;</code>: Define el título del documento que se muestra en la pestaña del navegador.</li>
+                    <li><code>&lt;meta&gt;</code>: Proporciona metadatos como el conjunto de caracteres, descripción de la página, palabras clave, etc.</li>
+                    <li><code>&lt;link&gt;</code>: Se usa para vincular recursos externos, principalmente hojas de estilo CSS.</li>
+                    <li><code>&lt;style&gt;</code>: Contiene información de estilo (CSS) para el documento.</li>
+                    <li><code>&lt;base&gt;</code>: Especifica la URL base para todas las URL relativas en una página.</li>
+                </ul>
+                <pre class="codigo-ejemplo"><code>&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mi Página Web&lt;/title&gt;
+  &lt;link rel="stylesheet" href="styles.css"&gt;
+&lt;/head&gt;</code></pre>
+            </article>
+
+
+        </section>
+
+    </div>
+
+    <a href="#" id="boton-volver-arriba" title="Volver al inicio">↑</a>
+
+    <script>
+        var botonVolverArriba = document.getElementById("boton-volver-arriba");
+        var tablaTags = document.getElementById("tabla-tags");
+        window.onscroll = function() {
+            var limiteParaMostrar = tablaTags.offsetTop + tablaTags.offsetHeight;
+            if (document.body.scrollTop > limiteParaMostrar || document.documentElement.scrollTop > limiteParaMostrar) {
+                botonVolverArriba.style.display = "block";
+            } else {
+                botonVolverArriba.style.display = "none";
+            }
+        };
+    </script>
+
+</body>
+</html>
